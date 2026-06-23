@@ -115,6 +115,11 @@ nav a:hover::after {
    CARDS
 ======================= */
 .card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background: var(--card);
   padding: 20px;
   margin: 15px;
@@ -132,13 +137,7 @@ nav a:hover::after {
 body.light .card {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-.card {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+
 /* =======================
    GRID (PROJETOS)
 ======================= */
