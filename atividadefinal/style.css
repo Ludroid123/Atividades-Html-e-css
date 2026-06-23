@@ -1,0 +1,254 @@
+/* =======================
+   VARIÁVEIS (DARK PADRÃO)
+======================= */
+:root {
+  --bg: #0a0a0a;
+  --text: #eaeaea;
+  --card: #141414;
+  --header: #000000;
+  --primary: #ff1a1a;
+}
+
+/* =======================
+   LIGHT MODE
+======================= */
+body.light {
+  --bg: #f5f5f5;
+  --text: #1a1a1a;
+  --card: #ffffff;
+  --header: #ffffff;
+  --primary: #cc0000;
+}
+
+/* =======================
+   GLOBAL
+======================= */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+/* =======================
+   HEADER
+======================= */
+header {
+  background: var(--header);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =======================
+   NAV
+======================= */
+nav a {
+  color: var(--text);
+  margin: 0 10px;
+  text-decoration: none;
+  position: relative;
+}
+
+/* efeito underline animado */
+nav a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* =======================
+   HERO (HOME)
+======================= */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+}
+
+.hero span {
+  color: var(--primary);
+}
+
+.hero p {
+  max-width: 600px;     /* limita largura */
+  margin: 15px auto;    /* centraliza */
+  font-size: 1rem;      /* tamanho equilibrado */
+  line-height: 1.6;     /* melhora leitura */
+}
+
+/* =======================
+   BOTÕES
+======================= */
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  margin: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: #990000;
+}
+
+/* =======================
+   CARDS
+======================= */
+.card {
+  background: var(--card);
+  padding: 20px;
+  margin: 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+  max-width: 300px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+
+/* sombra no modo claro */
+body.light .card {
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* =======================
+   GRID (PROJETOS)
+======================= */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* =======================
+   IMAGEM (SOBRE)
+======================= */
+img {
+  width: 180px;
+  border-radius: 50%;
+  margin-top: 15px;
+}
+
+/* =======================
+   FOOTER
+======================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--header);
+}
+
+/* =======================
+   ANIMAÇÃO
+======================= */
+.fade-in {
+  animation: fade 1s ease-in;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =======================
+   RESPONSIVO
+======================= */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+/* =======================
+   RESPONSIVO MELHORADO
+======================= */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 50px 15px;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  /* BOTÕES */
+  .btn {
+    width: 80%;
+    max-width: 250px;
+  }
+
+  /* GRID */
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* CARDS */
+  .card {
+    width: 90%;
+  }
+
+  /* IMAGEM */
+  img {
+    width: 140px;
+  }
+}
+i {
+  font-size: 24px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
